@@ -1,22 +1,56 @@
+//BIO object
 var bio = {
-  "name": "Paul Keahi Selhorst",
+  "name": "Paul Keahi",
   "role": "Senior Web Developer",
   "contacts": {
     "mobile": "808.728.9918",
     "email": "paulkeahi@gmail.com",
     "github": "Keahibono",
     "twitter": "@PaulKeahi",
-    "city": "Kailua, HI"
+    "location": "Kailua, HI"
   },
-  "bioPic": "",
+  "bioPic": "./images/palm-tree-pk.jpg",
   "welcomeMessage": "Aloha and Mahalo",
   "skills": [
-    "swimming",
+    "body surfing",
     "programming",
     "web development"
-  ]
+  ],
+  "display": function display(){
+      var formattedName = HTMLheaderName.replace("%data%", bio.name);
+      var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+
+      $("#header").prepend(formattedName, formattedRole);
+
+      var formattedConMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+      var formattedConEmail = HTMLemail.replace("%data%", bio.contacts.email);
+      var formattedConGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+      var formattedConTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+      var formattedConLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+      var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+      var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+
+      $("#topContacts, #footerContacts").append(formattedConMobile, formattedConEmail, formattedConGithub, formattedConTwitter, formattedConLocation);
+
+      $("#header").append(formattedBioPic, formattedWelcomeMsg);
+
+      //bio.skills
+      if (bio.skills.length > 0){
+        $("#header").append(HTMLskillsStart);
+
+        var formattedSkill = ""
+
+        for (skill in bio.skills){
+          formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+          $("#skills").append(formattedSkill);
+        }
+      }
+      //last Name toUpperCase()
+      $("#main").append(internationalizeButton);
+  }
 };
 
+//EDUCATION object
 var education = {
   "schools": [
     {
@@ -69,6 +103,7 @@ var education = {
   ]
 };
 
+//WORK object
 var work = {
   "jobs": [
     {
@@ -92,66 +127,83 @@ var work = {
       "dates": "October 2012 - May 2014",
       "description": "Assisted homeowners with their insurance claims and processing while managing re-construction project."
     }
-  ]
+  ],
+  "display": function display(){
+      if (work.jobs.length > 0){
+        $("#workExperience").append(HTMLworkStart);
+
+        for (job in work.jobs){
+          var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+          var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+          var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+          $(".work-entry:last").append(formattedEmployerTitle);
+
+          var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+          var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+          $(".work-entry:last").append(formattedDates);
+          $(".work-entry:last").append(formattedDescription);
+        }
+      }
+  }
 };
 
+//PROJECTS object
 var projects = {
   "projects": [
     {
       "title": "PrimeSpot Landing Page",
       "dates": "February 2016 - April 2016",
       "description": "Client had a landing page hosted on Wix, but wanted something much better. I built a responsive site with video backgrounds and a timer to countdown to the mobile application's launch on both Google Play and Apple's iTunes.",
-      "images": ["http://primespot.ninja"]
+      "image": "./images/primespot.jpg"
     },
     {
       "title": "White Teeth Landing Page",
       "dates": "January 2016 - Present",
       "description": "Oahu Dental Group recognizes a need for better marketing and customer outreach. After several consultations, client initiates new web properties for teeth whitening program to help build customer base.",
-      "images": ["http://whiteteeth.life"]
+      "image": "./images/whiteTeethVideoLanding.jpg"
     },
     {
       "title": "Grumble/Ditto App",
       "dates": "September 2015 - February 2016",
       "description": "Ditto App is a place where users can share their deepest, most intimate thoughts without being bullyed or criticized.",
-      "images": ""
+      "image": "./images/dittoApp.jpg"
     }
-  ]
+  ],
+  "display": function display(){
+      for (project in projects.projects){
+        $("#projects").append(HTMLprojectStart);
+
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].image);
+
+        $(".project-entry:last").append(formattedTitle);
+        $(".project-entry:last").append(formattedDates);
+        $(".project-entry:last").append(formattedDescription);
+        $(".project-entry:last").append(formattedImage);
+      }
+  }
 };
 
-//Header Name and Role
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+bio.display();
+work.display();
+projects.display();
 
-$("#header").prepend(formattedName, formattedRole);
+function inName(){
+  var nameArray = bio.name.split(" ");
 
+  if (nameArray.length < 3){
+    var lastName = nameArray.pop();
+    var firstName = nameArray.pop();
 
-//Bio Skills
-if (bio.skills.length > 0){
-  $("#header").append(HTMLskillsStart);
+    var properFirstName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+    var lastUpper = lastName.toUpperCase();
 
-  var formattedSkill = ""
-
-  for (skill in bio.skills){
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-    $("#skills").append(formattedSkill);
   }
+  return properFirstName + " " + lastUpper;
 }
 
-// Jobs
-if (work.jobs.length > 0){
-  $("#workExperience").append(HTMLworkStart);
-
-  for (job in work.jobs){
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    var formattedEmployerTitle = formattedEmployer + formattedTitle;
-
-    $(".work-entry:last").append(formattedEmployerTitle);
-
-    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-
-    $(".work-entry:last").append(formattedDates);
-    $(".work-entry:last").append(formattedDescription);
-  }
-}
+$("#mapDiv").append(googleMap);
