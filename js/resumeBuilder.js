@@ -60,7 +60,7 @@ var education = {
        "major": "Full-Stack Web Developer",
        "dates": 2015,
        "courses": ["Javascript", "HTML", "CSS", "Node.js"],
-       "url": ""
+       "url": "http://www.devleague.com/"
     },
     {
        "name": "Leeward Community College",
@@ -69,7 +69,7 @@ var education = {
        "major": "Information & Computer Science",
        "dates": 2015,
        "courses": [],
-       "url": ""
+       "url": "http://www.leeward.hawaii.edu/"
     },
     {
        "name": "University of Hawaii",
@@ -78,29 +78,20 @@ var education = {
        "major": "Business Administration",
        "dates": 2000,
        "courses": [],
-       "url": ""
+       "url": "https://www.hawaii.edu/"
     }
   ],
   "onlineCourses": [
     {
       "title": "Front-End Web Developer Nanodegree",
       "school": "Udacity",
-      "dates": "February 2016 - May 2016",
-      "url": ""
-    },
-    {
-      "title": "Senior Web Developer Nanodegree",
-      "school": "Udacity",
-      "dates": "May 2016 - August 2016",
-      "url": ""
-    },
-    {
-      "title": "",
-      "school": "",
-      "dates": "",
-      "url": ""
+      "dates": 2016,
+      "url": "https://profiles.udacity.com/u/paulkeahiselhorst"
     }
-  ]
+  ],
+  "display": function display(){
+
+  }
 };
 
 //WORK object
@@ -191,6 +182,7 @@ var projects = {
 bio.display();
 work.display();
 projects.display();
+education.display();
 
 function inName(){
   var nameArray = bio.name.split(" ");
