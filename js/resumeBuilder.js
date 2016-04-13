@@ -91,6 +91,32 @@ var education = {
   ],
   "display": function display(){
 
+    if (education.schools.length > 0){
+
+      $("#education").append(HTMLschoolStart);
+
+      for (school in education.schools){
+        var formattedSchool = HTMLschoolName.replace("%data%", education.schools[school].name);
+        // var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[schools].degree);
+        var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+        var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+
+        $(".education-entry").append(formattedSchool, formattedDates, formattedLocation, formattedMajor);
+      }
+    }
+
+    if (education.onlineCourses.length > 0){
+
+      for (school in education.onlineCourses){
+        var formattedClass = HTMLonlineTitle.replace("%data%", education.onlineCourses[school].title);
+        var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[school].school);
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[school].dates);
+        var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[school].url);
+
+        $(".education-entry").append(HTMLonlineClasses, formattedClass, formattedSchool, formattedOnlineDates, formattedURL);
+      }
+    }
   }
 };
 
