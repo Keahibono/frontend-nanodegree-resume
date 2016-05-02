@@ -16,7 +16,7 @@ var bio = {
     "web development"
   ],
   "biopic": "./images/palm-tree-pk.jpg",
-  "display": function display(){
+  "display": function b(){
       var formattedName = HTMLheaderName.replace("%data%", bio.name);
       var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 
@@ -27,7 +27,7 @@ var bio = {
       var formattedConGithub = HTMLgithub.replace("%data%", bio.contacts.github);
       var formattedConTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
       var formattedConLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-      var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+      var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
       var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
       $("#topContacts, #footerContacts").append(formattedConMobile, formattedConEmail, formattedConGithub, formattedConTwitter, formattedConLocation);
@@ -87,7 +87,7 @@ var education = {
       "url": "https://profiles.udacity.com/u/paulkeahiselhorst"
     }
   ],
-  "display": function display(){
+  "display": function s(){
 
     if (education.schools.length > 0){
 
@@ -143,7 +143,7 @@ var work = {
       "description": "Assisted homeowners with their insurance claims and processing while managing re-construction project."
     }
   ],
-  "display": function display(){
+  "display": function w(){
       if (work.jobs.length > 0){
         $("#workExperience").append(HTMLworkStart);
 
@@ -165,40 +165,41 @@ var work = {
 };
 
 //PROJECTS object
-var projects = [
-  {
-    "title": "PrimeSpot Landing Page",
-    "dates": "February 2016 - April 2016",
-    "description": "Client had a landing page hosted on Wix, but wanted something much better. I built a responsive site with video backgrounds and a timer to countdown to the mobile application's launch on both Google Play and Apple's iTunes.",
-    "image": "./images/primespot.jpg"
-  },
-  {
-    "title": "White Teeth Landing Page",
-    "dates": "January 2016 - Present",
-    "description": "Oahu Dental Group recognizes a need for better marketing and customer outreach. After several consultations, client initiates new web properties for teeth whitening program to help build customer base.",
-    "image": "./images/whiteTeethVideoLanding.jpg"
-  },
-  {
-    "title": "Grumble/Ditto App",
-    "dates": "September 2015 - February 2016",
-    "description": "Ditto App is a place where users can share their deepest, most intimate thoughts without being bullyed or criticized.",
-    "image": "./images/dittoApp.jpg"
-  }
+var projects = {
+  "projects":[
+    {
+      "title": "PrimeSpot Landing Page",
+      "dates": "February 2016 - April 2016",
+      "description": "Client had a landing page hosted on Wix, but wanted something much better. I built a responsive site with video backgrounds and a timer to countdown to the mobile application's launch on both Google Play and Apple's iTunes.",
+      "image": "./images/primespot.jpg"
+    },
+    {
+      "title": "White Teeth Landing Page",
+      "dates": "January 2016 - Present",
+      "description": "Oahu Dental Group recognizes a need for better marketing and customer outreach. After several consultations, client initiates new web properties for teeth whitening program to help build customer base.",
+      "image": "./images/whiteTeethVideoLanding.jpg"
+    },
+    {
+      "title": "Grumble/Ditto App",
+      "dates": "September 2015 - February 2016",
+      "description": "Ditto App is a place where users can share their deepest, most intimate thoughts without being bullyed or criticized.",
+      "image": "./images/dittoApp.jpg"
+    }
   ],
-  "display": function display(){
-      for (project in projects.projects){
-        $("#projects").append(HTMLprojectStart);
+  "display": function p() {
+    for (project in projects.projects){
+      $("#projects").append(HTMLprojectStart);
 
-        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].image);
+      var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+      var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+      var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+      var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].image);
 
-        $(".project-entry:last").append(formattedTitle);
-        $(".project-entry:last").append(formattedDates);
-        $(".project-entry:last").append(formattedDescription);
-        $(".project-entry:last").append(formattedImage);
-      }
+      $(".project-entry:last").append(formattedTitle);
+      $(".project-entry:last").append(formattedDates);
+      $(".project-entry:last").append(formattedDescription);
+      $(".project-entry:last").append(formattedImage);
+    }
   }
 };
 
