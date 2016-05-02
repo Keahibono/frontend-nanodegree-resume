@@ -57,16 +57,15 @@ var education = {
        "name": "DevLeague",
        "location": "Honolulu, HI",
        "degree": "Certificate of Completion",
-       "majors": "Full-Stack Web Developer",
+       "majors": ["Full-Stack Web Developer"],
        "dates": "April - October 2015",
-       "url": "http://www.devleague.com/",
-       "courses": ["Javascript", "HTML", "CSS", "Node.js"],
+       "url": "http://www.devleague.com/"
     },
     {
        "name": "Leeward Community College",
        "location": "Pearl City, HI",
        "degree": "",
-       "major": "Information & Computer Science",
+       "majors": ["Information & Computer Science"],
        "dates": "Januray 2014 - December 2015",
        "url": "http://www.leeward.hawaii.edu/"
     },
@@ -74,7 +73,7 @@ var education = {
        "name": "University of Hawaii",
        "location": "Honolulu, HI",
        "degree": "",
-       "major": "Business Administration",
+       "majors": ["Business Administration"],
        "dates": "May 1999 - Decmber 2000",
        "url": "https://www.hawaii.edu/"
     }
@@ -95,10 +94,10 @@ var education = {
 
       for (school in education.schools){
         var formattedSchool = HTMLschoolName.replace("%data%", education.schools[school].name);
-        // var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[schools].degree);
+        //var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[schools].degree);
         var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
         var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
 
         $(".education-entry").append(formattedSchool, formattedDates, formattedLocation, formattedMajor);
       }
