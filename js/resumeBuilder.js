@@ -170,19 +170,19 @@ var projects = {
       "title": "PrimeSpot Landing Page",
       "dates": "February 2016 - April 2016",
       "description": "Client had a landing page hosted on Wix, but wanted something much better. I built a responsive site with video backgrounds and a timer to countdown to the mobile application's launch on both Google Play and Apple's iTunes.",
-      "image": "./images/primespot.jpg"
+      "image": ["./images/primespot.jpg"]
     },
     {
       "title": "White Teeth Landing Page",
       "dates": "January 2016 - Present",
       "description": "Oahu Dental Group recognizes a need for better marketing and customer outreach. After several consultations, client initiates new web properties for teeth whitening program to help build customer base.",
-      "image": "./images/whiteTeethVideoLanding.jpg"
+      "image": ["./images/whiteTeethVideoLanding.jpg"]
     },
     {
       "title": "Grumble/Ditto App",
       "dates": "September 2015 - February 2016",
       "description": "Ditto App is a place where users can share their deepest, most intimate thoughts without being bullyed or criticized.",
-      "image": "./images/dittoApp.jpg"
+      "image": ["./images/dittoApp.jpg"]
     }
   ],
   "display": function p() {
