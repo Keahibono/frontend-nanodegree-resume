@@ -123,7 +123,7 @@ var work = {
     {
       "employer": "Grumble App, Inc.",
       "title": "Co-Founder",
-      "location": ["Honolulu, HI", "Kailua, HI"],
+      "location": "Honolulu, HI",
       "dates": "September 2015 - February 2016",
       "description": "Business Administration duties with emphasis on market research and promotion."
     },
