@@ -1,0 +1,28 @@
+h2 {
+  animation-duration: 5s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+#header {
+  background-color: #484848;
+  animation-name: chameleon;
+  animation-duration: 5s;
+}
+
+@keyframes chameleon {
+    from {background-color: #484848;}
+    to {background-color: red;}
+}
