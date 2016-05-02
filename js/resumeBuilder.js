@@ -94,7 +94,7 @@ var education = {
 
       for (school in education.schools){
         var formattedSchool = HTMLschoolName.replace("%data%", education.schools[school].name);
-        var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[schools].degree);
+        var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
         var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
         var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
         var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
