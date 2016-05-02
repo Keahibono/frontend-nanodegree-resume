@@ -9,13 +9,13 @@ var bio = {
     "twitter": "@PaulKeahi",
     "location": "Kailua, HI"
   },
-  "bioPic": "./images/palm-tree-pk.jpg",
   "welcomeMessage": "Aloha and Mahalo",
   "skills": [
     "body surfing",
     "programming",
     "web development"
   ],
+  "biopic": "./images/palm-tree-pk.jpg",
   "display": function display(){
       var formattedName = HTMLheaderName.replace("%data%", bio.name);
       var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -57,18 +57,17 @@ var education = {
        "name": "DevLeague",
        "location": "Honolulu, HI",
        "degree": "Certificate of Completion",
-       "major": "Full-Stack Web Developer",
-       "dates": 2015,
+       "majors": "Full-Stack Web Developer",
+       "dates": "April - October 2015",
+       "url": "http://www.devleague.com/",
        "courses": ["Javascript", "HTML", "CSS", "Node.js"],
-       "url": "http://www.devleague.com/"
     },
     {
        "name": "Leeward Community College",
        "location": "Pearl City, HI",
        "degree": "",
        "major": "Information & Computer Science",
-       "dates": 2015,
-       "courses": [],
+       "dates": "Januray 2014 - December 2015",
        "url": "http://www.leeward.hawaii.edu/"
     },
     {
@@ -76,8 +75,7 @@ var education = {
        "location": "Honolulu, HI",
        "degree": "",
        "major": "Business Administration",
-       "dates": 2000,
-       "courses": [],
+       "dates": "May 1999 - Decmber 2000",
        "url": "https://www.hawaii.edu/"
     }
   ],
@@ -85,7 +83,7 @@ var education = {
     {
       "title": "Front-End Web Developer Nanodegree",
       "school": "Udacity",
-      "dates": 2016,
+      "dates": "January 2016 - Present",
       "url": "https://profiles.udacity.com/u/paulkeahiselhorst"
     }
   ],
@@ -167,26 +165,25 @@ var work = {
 };
 
 //PROJECTS object
-var projects = {
-  "projects": [
-    {
-      "title": "PrimeSpot Landing Page",
-      "dates": "February 2016 - April 2016",
-      "description": "Client had a landing page hosted on Wix, but wanted something much better. I built a responsive site with video backgrounds and a timer to countdown to the mobile application's launch on both Google Play and Apple's iTunes.",
-      "image": "./images/primespot.jpg"
-    },
-    {
-      "title": "White Teeth Landing Page",
-      "dates": "January 2016 - Present",
-      "description": "Oahu Dental Group recognizes a need for better marketing and customer outreach. After several consultations, client initiates new web properties for teeth whitening program to help build customer base.",
-      "image": "./images/whiteTeethVideoLanding.jpg"
-    },
-    {
-      "title": "Grumble/Ditto App",
-      "dates": "September 2015 - February 2016",
-      "description": "Ditto App is a place where users can share their deepest, most intimate thoughts without being bullyed or criticized.",
-      "image": "./images/dittoApp.jpg"
-    }
+var projects = [
+  {
+    "title": "PrimeSpot Landing Page",
+    "dates": "February 2016 - April 2016",
+    "description": "Client had a landing page hosted on Wix, but wanted something much better. I built a responsive site with video backgrounds and a timer to countdown to the mobile application's launch on both Google Play and Apple's iTunes.",
+    "image": "./images/primespot.jpg"
+  },
+  {
+    "title": "White Teeth Landing Page",
+    "dates": "January 2016 - Present",
+    "description": "Oahu Dental Group recognizes a need for better marketing and customer outreach. After several consultations, client initiates new web properties for teeth whitening program to help build customer base.",
+    "image": "./images/whiteTeethVideoLanding.jpg"
+  },
+  {
+    "title": "Grumble/Ditto App",
+    "dates": "September 2015 - February 2016",
+    "description": "Ditto App is a place where users can share their deepest, most intimate thoughts without being bullyed or criticized.",
+    "image": "./images/dittoApp.jpg"
+  }
   ],
   "display": function display(){
       for (project in projects.projects){
